@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistem Pakar Diagnosa - Beranda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fa;
+        }
+    </style>
+</head>
+<body>
+
+<header class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <img src="assets/images.png" 
+                 alt="Logo Universitas Pamulang" 
+                 class="w-8 h-8 object-contain rounded-full shadow-md"
+                 onerror="this.onerror=null; this.src='https://placehold.co/32x32/1e40af/ffffff?text=UNP'">
+            <h2 class="text-xl font-extrabold text-gray-900 leading-tight">
+                Sistem Pakar <span class="block text-sm font-medium text-blue-600">Diagnosa Kerusakan Komputer</span>
+            </h2>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+            <a href="index.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Home</a>
+            <a href="diagnosa.html" class="text-gray-600 hover:text-blue-600 transition duration-150">Diagnosa</a>
+            <a href="about.html" class="text-gray-600 hover:text-blue-600 transition duration-150">About</a>
+            <a href="diagram-tree.html" class="text-gray-600 hover:text-blue-600 transition duration-150">Diagram Tree</a>
+            <a href="#" class="text-gray-600 hover:text-blue-600 transition duration-150">Implikasi</a>
+        </nav>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <section class="bg-blue-600 text-white rounded-xl p-10 mb-10 shadow-2xl">
+        <div class="md:flex md:justify-between md:items-center">
+            <div class="md:w-3/4">
+                <h1 class="text-4xl font-extrabold mb-3">
+                    Sistem Pakar Diagnosa Kerusakan Komputer
+                </h1>
+                <p class="text-blue-200 text-lg">
+                    Implementasi Algoritma Certainty Factor pada Laboratorium ICT Budi Luhur.
+                </p>
+            </div>
+            <div class="mt-6 md:mt-0">
+                <a href="diagnosa.html" class="inline-block bg-white text-blue-600 font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    Mulai Diagnosa &rarr;
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+        
+        <div class="lg:col-span-2 bg-white p-8 rounded-xl shadow-lg">
+
+            <h2 class="text-2xl font-extrabold text-gray-900 mb-4 border-b pb-2">
+                "Sistem Pakar Diagnosa Kerusakan Komputer Dengan Algoritma Certainty Factor Pada Lab ICT Budi Luhur"
+            </h2>
+            
+            <div class="content-text text-gray-700 space-y-4">
+                <h3 class="font-bold text-lg text-blue-600">Pendahuluan (Abstrak Singkat)</h3>
+                <p>
+                    Proses maintenance dan identifikasi kerusakan komputer di Lab ICT Universitas Budi Luhur seringkali memakan waktu lama karena keterbatasan pengetahuan Asisten Lab. 
+                    Hal ini menyebabkan penumpukan masalah kerusakan.
+                </p>
+                <p>
+                    Sistem Pakar ini dikembangkan menggunakan Algoritma Certainty Factor (CF) dan Forward Chaining untuk mentransfer pengetahuan ahli ke dalam komputer. 
+                    Tujuannya adalah membantu asisten lab mendiagnosis kerusakan secara cepat, akurat, dan sistematis, berdasarkan gejala yang diamati.
+                </p>
+                <p class="text-sm italic mt-4 text-gray-500">
+                    (Disesuaikan dari abstrak jurnal untuk tujuan web introduction.)
+                </p>
+            </div>
+        </div>
+
+        <!-- Kolom Kanan: Daftar Penulis -->
+        <div class="lg:col-span-1 space-y-6">
+            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                <h3 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">Tim Pengembang / Penulis</h3>
+                <ul class="space-y-2 text-gray-700">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.585 0 5.107.828 7.159 2.304M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        Hendriko Saputra Yuliansyah
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.585 0 5.107.828 7.159 2.304M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        Kirana Cinta Mentari
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.585 0 5.107.828 7.159 2.304M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        Maulidya Zahra Rianni
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.585 0 5.107.828 7.159 2.304M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        Nia Zahra
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.585 0 5.107.828 7.159 2.304M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        Sukhoi Baresi
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="content-image bg-gray-100 rounded-xl p-4 shadow-inner">
+                 <img src="https://placehold.co/400x250/3b82f6/ffffff?text=Lab+ICT" alt="Content Image" class="rounded-lg w-full h-auto object-cover opacity-80">
+            </div>
+        </div>
+    </section>
+</main>
+
+<div class="fixed bottom-0 left-0 right-0 bg-gray-900 text-white p-4 text-center text-sm shadow-xl">
+    Proyek ini dikembangkan sebagai tugas mata kuliah di bawah bimbingan Bapak Niki Pratama.
+    <a href="#" class="text-blue-400 hover:text-blue-300 underline ml-2">privacy and cookies policy</a>.
+</div>
+
+<footer class="bg-gray-800 text-white text-center p-4 mt-10">
+    <p>&copy; 2025 Sistem Pakar Diagnosa Kerusakan Komputer. Hak Cipta Dilindungi.</p>
+</footer>
+
+</body>
+</html>

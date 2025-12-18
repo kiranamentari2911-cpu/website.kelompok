@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagnosa Sistem Pakar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fa;
+        }
+        #daftar-gejala::-webkit-scrollbar {
+            width: 8px;
+        }
+        #daftar-gejala::-webkit-scrollbar-thumb {
+            background-color: #9ca3af;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <div class="bg-blue-600 w-6 h-6 rounded-full"></div>
+            <h2 class="text-xl font-extrabold text-gray-900 leading-tight">
+                Sistem Pakar <span class="block text-sm font-medium text-blue-600">Diagnosa Kerusakan Komputer</span>
+            </h2>
+        </div>
+        <nav class="hidden md:flex space-x-6">
+            <a href="index.html" class="text-gray-600 hover:text-blue-600 transition duration-150">Home</a>
+            <a href="diagnosa.html" class="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">Diagnosa</a>
+            <a href="about.html" class="text-gray-600 hover:text-blue-600 transition duration-150">About</a>
+            <a href="diagram-tree.html" class="text-gray-600 hover:text-blue-600 transition duration-150">Diagram Tree</a>
+            <a href="#" class="text-gray-600 hover:text-blue-600 transition duration-150">Implikasi</a>
+        </nav>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+
+        <div class="lg:col-span-1 space-y-6">
+            
+            <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                <h1 class="text-3xl font-bold text-gray-800 mb-2">Diagnosa Sistem</h1>
+                <p class="text-gray-600 mb-6 text-sm">
+                    Sistem diagnosa ini dirancang untuk membantu pengguna
+                    dalam mengidentifikasi kondisi awal kerusakan komputer berdasarkan gejala
+                    yang dipilih melalui pendekatan berbasis aturan dan metode Certainty Factor (CF).
+                </p>
+
+                <ul class="diagnosa-list space-y-3">
+                    <li class="flex items-center text-sm text-gray-700">
+                        <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Proses diagnosa cepat dan sistematis
+                    </li>
+                    <li class="flex items-center text-sm text-gray-700">
+                        <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        Berbasis aturan dan logika sistem pakar (CF)
+                    </li>
+                    <li class="flex items-center text-sm text-gray-700">
+                        <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6a2 2 0 00-2-2H5a2 2 0 00-2 2v13M14 19V6a2 2 0 012-2h2a2 2 0 012 2v13M18 6h-4"></path></svg>
+                        Mendukung pengambilan keputusan awal
+                    </li>
+                    <li class="flex items-center text-sm text-gray-700">
+                        <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L19.5 7.5l-2.25-2.25L7.5 14.75m-4.5 4.5l2.25 2.25L17.25 12l2.25-2.25L12 2.25l-2.25 2.25L2.25 17.25z"></path></svg>
+                        Antarmuka sederhana dan mudah digunakan
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="diagnosa-image hidden lg:block bg-blue-100 rounded-xl p-4 shadow-inner">
+                <img src="https://placehold.co/400x250/3b82f6/ffffff?text=Computer+Diagnosis" alt="Diagnosa Image" class="rounded-lg w-full h-auto object-cover opacity-80">
+            </div>
+
+        </div>
+
+        <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-2xl space-y-6">
+            <h2 class="text-2xl font-extrabold text-gray-800 border-b pb-3 mb-4">
+                Pilih Gejala yang Anda Alami
+            </h2>
+            
+            <div id="daftar-gejala" class="max-h-96 overflow-y-auto border border-gray-200 p-4 rounded-lg bg-gray-50">
+                Memuat daftar gejala...
+            </div>
+
+            <div class="diagnosa-buttons">
+                <button 
+                    class="btn-yes w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-bold transition duration-300 shadow-md transform hover:scale-[1.01] active:scale-100" 
+                    onclick="lakukanDiagnosa()">
+                    Lakukan Diagnosa Kerusakan
+                </button>
+            </div>
+            
+            <div id="hasil-diagnosa" class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-lg shadow-inner">
+                <h3 class="text-lg font-semibold text-blue-800 mb-2">Hasil Diagnosa Kerusakan:</h3>
+                <p class="text-gray-600 text-sm">Silakan pilih gejala di atas dan tekan tombol "Lakukan Diagnosa" untuk melihat hasilnya.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="diagnosa-features pt-8">
+        <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Fitur Utama Sistem</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            
+            <div class="feature-box bg-white p-4 rounded-lg shadow-lg text-center border-t-4 border-green-500">
+                <span class="text-2xl font-bold text-green-600 mb-2 block">✔</span>
+                <h4 class="font-semibold text-gray-800">Input Gejala</h4>
+                <p class="text-xs text-gray-500 mt-1">Pengguna memilih gejala yang dialami dari daftar lengkap.</p>
+            </div>
+            
+            <div class="feature-box bg-white p-4 rounded-lg shadow-lg text-center border-t-4 border-yellow-500">
+                <span class="text-2xl font-bold text-yellow-600 mb-2 block">✔</span>
+                <h4 class="font-semibold text-gray-800">Proses CF</h4>
+                <p class="text-xs text-gray-500 mt-1">Sistem memproses data menggunakan metode Certainty Factor.</p>
+            </div>
+            
+            <div class="feature-box bg-white p-4 rounded-lg shadow-lg text-center border-t-4 border-blue-500">
+                <span class="text-2xl font-bold text-blue-600 mb-2 block">✔</span>
+                <h4 class="font-semibold text-gray-800">Hasil Analisis</h4>
+                <p class="text-xs text-gray-500 mt-1">Menampilkan hasil diagnosa dengan tingkat keyakinan (persentase).</p>
+            </div>
+            
+            <div class="feature-box bg-white p-4 rounded-lg shadow-lg text-center border-t-4 border-purple-500">
+                <span class="text-2xl font-bold text-purple-600 mb-2 block">✔</span>
+                <h4 class="font-semibold text-gray-800">Rekomendasi</h4>
+                <p class="text-xs text-gray-500 mt-1">Saran tindakan lanjutan bagi pengguna (solusi).</p>
+            </div>
+            
+            <div class="feature-box bg-white p-4 rounded-lg shadow-lg text-center border-t-4 border-indigo-500">
+                <span class="text-2xl font-bold text-indigo-600 mb-2 block">✔</span>
+                <h4 class="font-semibold text-gray-800">Data Tersimpan</h4>
+                <p class="text-xs text-gray-500 mt-1">Riwayat diagnosa dapat disimpan (placeholder/fitur masa depan).</p>
+            </div>
+            
+            <div class="feature-box bg-white p-4 rounded-lg shadow-lg text-center border-t-4 border-red-500">
+                <span class="text-2xl font-bold text-red-600 mb-2 block">✔</span>
+                <h4 class="font-semibold text-gray-800">Berbasis AI</h4>
+                <p class="text-xs text-gray-500 mt-1">Dapat dikembangkan dengan AI / Fuzzy.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-gray-800 text-white text-center p-4 mt-10">
+    <p>&copy; 2025 Sistem Pakar Diagnosa Kerusakan Komputer. Hak Cipta Dilindungi.</p>
+</footer>
+<script>
+    const daftarKerusakan = [
+        { kode: 'K1', nama: 'MONITOR RUSAK', detail: 'Monitor Tidak Berfungsi dengan baik atau mati total', solusi: 'Cek Kabel Power Monitor dan Kabel VGA Monitor apabila tidak ada perubahan Segera lapor supervisor dan lakukan permintaan barang' },
+        { kode: 'K2', nama: 'MEMORI RUSAK', detail: 'Memori card/RAM tidak berfungsi dengan baik', solusi: 'Coba bersihkan pin kuningan pada RAM dengan penghapus atau kain halus, Bersihkan Slot Ram pada Motherboard dan coba ganti Slot pada Motherboard,kalau tetap tidak bisa, Cek pada perangkat lain pada motherboard dan segera lapor supervisior dan lakukan permintaan barang' },
+        { kode: 'K3', nama: 'Harddisk Rusak', detail: 'Harddisk tidak berfungsi dengan baik atau bad sector', solusi: 'Coba lakukan checkdisk/defragment disk, Backup data, coba lakukan instal ulang OS dan kalau masih tetap berfungsi tidak baik segera lapor spv dan lakukan permintaan barang' },
+        { kode: 'K4', nama: 'VGA RUSAK', detail: 'Ketika graphic card tidak berfungsi/mati', solusi: 'Bersihkan Pin pada VGA Card dan Slot VGA Card dan coba memakai display onboard motherboard apabila pada onboard bisa menyala maka segera lakukan permintaan barang ke supervisior' },
+        { kode: 'K5', nama: 'OS BERMASALAH', detail: 'Windows tidak berjalan lancar atau Bluescreen', solusi: 'Cek semua driver system, Cek System Bios dan lakukan Repair system jika masih belum bisa segera backup data dan lakukan instalasi ulang OS' },
+        { kode: 'K6', nama: 'POWER SUPLEY RUSAK', detail: 'PSU tidak ada daya untuk menyalahkan Komputer', solusi: 'Coba jumper psu apa bila tidak ada daya segera lakukan permintaan PSU ke supervisior dan minta dengan daya yang sedikit lebih besar dari sebelumnya' },
+        { kode: 'K7', nama: 'PROSESOR RUSAK', detail: 'Prosesor sudah tidak berfungsi dengan baik', solusi: 'Segera lakukan permintaan barang kalau bisa dengan clock yang lebih tinggi, untuk seterusnya lebih sering lakukan penambahan thermal paste agar prosesor lebih tahan lama' },
+        { kode: 'K8', nama: 'Motherboard Rusak', detail: 'Slot dan port motherboard banyak yang tidak berfungsi', solusi: 'Periksa dengan pasti kondisi semua perangkat pada PC coba dengan perangkat yang menyala dari PC lain apabila tidak ada tanda perangkat penyala maka Segera lakukan permintaan barang ke supervisior' },
+        { kode: 'K9', nama: 'Keyboard Rusak', detail: 'Ketika Keyboard tidak terdeteksi / Karakter inputan tidak bisa', solusi: 'Periksa Slot USB pada Motherboard dan coba tukar keyboard dengan yang menyala dari PC lain apabila tidak ada tanda keyboard berfungsi maka Lakukan Permintaan barang ke supervisor' },
+        { kode: 'K10', nama: 'Mouse Rusak', detail: 'Ketika Mouse tidak terdeteksi dan pointer mouse tidak berjalan dengan baik', solusi: 'Periksa Slot USB pada Motherboard dan coba tukar Mouse dengan yang menyala dari PC lain apabila tidak ada tanda mouse berfungsi Segera lakukan permintaan barang pada supervisior' }
+    ];
+    const daftarGejala = [
+        { kode: 'G1', nama: 'cpu hidup tapi tidak ada gambar tertampil di monitor' },
+        { kode: 'G2', nama: 'Terdapat garis horisontal/vertikal ditengah monitor' },
+        { kode: 'G3', nama: 'Tidak ada tampilan awal bios' },
+        { kode: 'G4', nama: 'Muncul Pesan eror pada bios (isi pesan selalu berbeda pada tiap kasus)' },
+        { kode: 'G5', nama: 'Alarm bios berbunyi' },
+        { kode: 'G6', nama: 'Terdengar suara aneh pada HDD' },
+        { kode: 'G7', nama: 'Sering terjadi hang/crash saat menjalankan aplikasi' },
+        { kode: 'G8', nama: 'Selalu Scandisk ketika booting' },
+        { kode: 'G9', nama: 'Muncul pesan error saat menjalankan aplikasi grafis' },
+        { kode: 'G10', nama: 'Device driver informasi tidak terdeteksi dalam device manager' },
+        { kode: 'G11', nama: 'Tiba-tiba OS melakukan restart otomatis' },
+        { kode: 'G12', nama: 'Keluarnya blue screen pada OS Windows (isi pesan selalu berbeda pada tiap kasus)' },
+        { kode: 'G13', nama: 'Muncul pesan error saat pertama OS di load dari HD' },
+        { kode: 'G14', nama: 'Tidak ada tanda-tanda dari sebagain/seluruh perangkat menyala' },
+        { kode: 'G15', nama: 'Sering tiba-tiba mati tanpa sebab' },
+        { kode: 'G16', nama: 'Muncul pesan pada windows, bahwa windows kekurangan memori' },
+        { kode: 'G17', nama: 'Aplikasi berjalan dengan lambat' },
+        { kode: 'G18', nama: 'Kinerja grafis terasa sangat berat' },
+        { kode: 'G19', nama: 'Device tidak terdeteksi dalam bios' },
+        { kode: 'G20', nama: 'Informasi deteksi yang salah dalam bios' },
+        { kode: 'G21', nama: 'Hanya sebagaian perangkat yang bekerja' },
+        { kode: 'G22', nama: 'Sebagain/seluruh karekter inputan mati' },
+        { kode: 'G23', nama: 'Pointer mouse tidak merespon gerakan mouse' },
+        { kode: 'G24', nama: 'Tampak blok hitam, dan gambar tidak simetris/acak' },
+        { kode: 'G25', nama: 'Keluar bunyi beep panjang pada saat dinyalakan' },
+        { kode: 'G26', nama: 'Tidak ada indikasi masuk power' },
+        { kode: 'G27', nama: 'Mati total' },
+        { kode: 'G28', nama: 'Keluar beep berulang-ulang kali' },
+        { kode: 'G29', nama: 'Belum sampai windows sudah restart lagi' },
+        { kode: 'G30', nama: 'Respon lambat pada inputan' },
+        { kode: 'G31', nama: 'Lampu Indikator Monitor berwarna merah' },
+        { kode: 'G32', nama: 'Double Klik pada mouse' },
+        { kode: 'G33', nama: 'Lampu indikator mouse tidak menyala' }
+    ];
+
+    // Basis Pengetahuan (Rules) - Diambil dari Tabel 3
+    const basisPengetahuan = [
+        // MONITOR RUSAK (K1)
+        { gejala: 'G1', kerusakan: 'K1', mb: 0.8, md: 0.3 }, { gejala: 'G24', kerusakan: 'K1', mb: 0.9, md: 0.1 }, 
+        { gejala: 'G2', kerusakan: 'K1', mb: 0.9, md: 0.1 }, { gejala: 'G31', kerusakan: 'K1', mb: 0.7, md: 0.3 },
+        
+        // MOUSE RUSAK (K10)
+        { gejala: 'G23', kerusakan: 'K10', mb: 0.9, md: 0.1 }, { gejala: 'G10', kerusakan: 'K10', mb: 0.8, md: 0.2 }, 
+        { gejala: 'G33', kerusakan: 'K10', mb: 0.9, md: 0.2 }, { gejala: 'G32', kerusakan: 'K10', mb: 0.9, md: 0.2 },
+        
+        // MEMORI RUSAK (K2)
+        { gejala: 'G1', kerusakan: 'K2', mb: 0.8, md: 0.2 }, { gejala: 'G16', kerusakan: 'K2', mb: 0.9, md: 0.1 }, 
+        { gejala: 'G28', kerusakan: 'K2', mb: 0.7, md: 0.2 }, { gejala: 'G25', kerusakan: 'K2', mb: 0.7, md: 0.3 },
+        { gejala: 'G17', kerusakan: 'K2', mb: 0.8, md: 0.2 }, { gejala: 'G4', kerusakan: 'K2', mb: 0.7, md: 0.3 },
+        { gejala: 'G7', kerusakan: 'K2', mb: 0.8, md: 0.2 }, { gejala: 'G30', kerusakan: 'K2', mb: 0.7, md: 0.3 },
+        { gejala: 'G31', kerusakan: 'K2', mb: 0.8, md: 0.3 },
+
+        // HARDDISK RUSAK (K3)
+        { gejala: 'G17', kerusakan: 'K3', mb: 0.7, md: 0.3 }, { gejala: 'G29', kerusakan: 'K3', mb: 0.7, md: 0.3 },
+        { gejala: 'G13', kerusakan: 'K3', mb: 0.7, md: 0.2 }, { gejala: 'G8', kerusakan: 'K3', mb: 0.9, md: 0.1 },
+        { gejala: 'G6', kerusakan: 'K3', mb: 1.0, md: 0.0 }, { gejala: 'G19', kerusakan: 'K3', mb: 0.8, md: 0.2 },
+        
+        // VGA RUSAK (K4)
+        { gejala: 'G1', kerusakan: 'K4', mb: 0.8, md: 0.2 }, { gejala: 'G18', kerusakan: 'K4', mb: 0.9, md: 0.2 },
+        { gejala: 'G9', kerusakan: 'K4', mb: 0.8, md: 0.2 }, { gejala: 'G12', kerusakan: 'K4', mb: 0.7, md: 0.3 },
+        { gejala: 'G17', kerusakan: 'K4', mb: 0.7, md: 0.3 }, { gejala: 'G10', kerusakan: 'K4', mb: 0.7, md: 0.2 },
+        { gejala: 'G31', kerusakan: 'K4', mb: 0.7, md: 0.3 },
+        
+        // OS BERMASALAH (K5)
+        { gejala: 'G17', kerusakan: 'K5', mb: 0.8, md: 0.3 }, { gejala: 'G29', kerusakan: 'K5', mb: 0.8, md: 0.2 },
+        { gejala: 'G12', kerusakan: 'K5', mb: 0.8, md: 0.2 }, { gejala: 'G13', kerusakan: 'K5', mb: 0.7, md: 0.3 },
+        { gejala: 'G7', kerusakan: 'K5', mb: 0.8, md: 0.2 }, { gejala: 'G11', kerusakan: 'K5', mb: 0.8, md: 0.1 },
+
+        // POWER SUPLEY RUSAK (K6)
+        { gejala: 'G27', kerusakan: 'K6', mb: 0.9, md: 0.2 }, { gejala: 'G15', kerusakan: 'K6', mb: 0.7, md: 0.4 },
+        { gejala: 'G14', kerusakan: 'K6', mb: 0.9, md: 0.2 }, { gejala: 'G26', kerusakan: 'K6', mb: 0.9, md: 0.2 },
+        { gejala: 'G11', kerusakan: 'K6', mb: 0.6, md: 0.4 },
+
+        // PROSESOR RUSAK (K7)
+        { gejala: 'G5', kerusakan: 'K7', mb: 0.9, md: 0.3 }, { gejala: 'G3', kerusakan: 'K7', mb: 0.9, md: 0.1 },
+        { gejala: 'G4', kerusakan: 'K7', mb: 0.8, md: 0.3 }, { gejala: 'G1', kerusakan: 'K7', mb: 0.7, md: 0.3 },
+        
+        // MOTHERBOARD RUSAK (K8)
+        { gejala: 'G21', kerusakan: 'K8', mb: 0.9, md: 0.1 }, { gejala: 'G27', kerusakan: 'K8', mb: 0.8, md: 0.2 },
+        { gejala: 'G14', kerusakan: 'K8', mb: 0.9, md: 0.2 }, { gejala: 'G26', kerusakan: 'K8', mb: 0.6, md: 0.2 },
+
+        // KEYBOARD RUSAK (K9)
+        { gejala: 'G22', kerusakan: 'K9', mb: 0.9, md: 0.1 }, { gejala: 'G10', kerusakan: 'K9', mb: 0.8, md: 0.4 },
+        { gejala: 'G19', kerusakan: 'K9', mb: 0.7, md: 0.4 }, { gejala: 'G30', kerusakan: 'K9', mb: 0.7, md: 0.3 }
+    ];
+
+
+    // Fungsi untuk memuat daftar gejala ke dalam HTML
+    function muatGejala() {
+        const container = document.getElementById('daftar-gejala');
+        let htmlContent = '<ul class="space-y-2 text-sm">';
+        daftarGejala.forEach(gejala => {
+            htmlContent += `
+                <li class="flex items-start">
+                    <input type="checkbox" id="${gejala.kode}" name="gejala_dipilih" value="${gejala.kode}" class="mt-1 mr-2 accent-blue-600 w-4 h-4 rounded">
+                    <label for="${gejala.kode}" class="text-gray-700 leading-tight">
+                        <span class="font-medium text-blue-800"> [${gejala.kode}]</span> - ${gejala.nama}
+                    </label>
+                </li>
+            `;
+        });
+        htmlContent += '</ul>';
+        container.innerHTML = htmlContent;
+    }
+
+    // Fungsi utama untuk menjalankan diagnosa menggunakan Certainty Factor
+    function lakukanDiagnosa() {
+        const gejalaDipilih = Array.from(document.querySelectorAll('input[name="gejala_dipilih"]:checked')).map(cb => cb.value);
+        const hasilContainer = document.getElementById('hasil-diagnosa');
+        
+        if (gejalaDipilih.length === 0) {
+            hasilContainer.innerHTML = `
+                <h3 class="text-lg font-semibold text-red-800 mb-2">Peringatan Diagnosa:</h3>
+                <p class="text-red-600">Mohon pilih minimal satu gejala yang Anda amati pada komputer.</p>
+            `;
+            return;
+        }
+
+        let cfKerusakan = {}; 
+
+        // 1. Certainty Factor Rule (CF Pakar)
+        const rulesCF = basisPengetahuan.map(rule => {
+            const cfPakar = rule.mb - rule.md;
+            return { ...rule, cf_pakar: cfPakar };
+        });
+        
+        // Asumsi CF User = 1.0 (Pasti) untuk gejala yang dicentang
+        const cfUser = 1.0; 
+
+        rulesCF.forEach(rule => {
+            if (gejalaDipilih.includes(rule.gejala)) {
+                // CF Paralel = CF(user) x CF(pakar)
+                const cfParalel = cfUser * rule.cf_pakar; 
+
+                // CF Gabungan (CF Combine)
+                if (cfKerusakan[rule.kerusakan]) {
+                    const cfLama = cfKerusakan[rule.kerusakan];
+                    cfKerusakan[rule.kerusakan] = cfLama + cfParalel * (1 - cfLama);
+                } else {
+                    cfKerusakan[rule.kerusakan] = cfParalel;
+                }
+            }
+        });
+
+        // 2. Tentukan Hasil Akhir
+        let hasilDiagnosa = [];
+        for (const kodeKerusakan in cfKerusakan) {
+            const kerusakanData = daftarKerusakan.find(k => k.kode === kodeKerusakan);
+            const persentase = (cfKerusakan[kodeKerusakan] * 100).toFixed(2);
+            
+            hasilDiagnosa.push({
+                kode: kodeKerusakan,
+                nama: kerusakanData.nama,
+                persentase: persentase,
+                solusi: kerusakanData.solusi,
+                detail: kerusakanData.detail
+            });
+        }
+
+        // Urutkan hasil berdasarkan persentase tertinggi
+        hasilDiagnosa.sort((a, b) => parseFloat(b.persentase) - parseFloat(a.persentase));
+
+        let outputHTML = '<h3 class="text-lg font-semibold text-blue-800 mb-2">Hasil Analisis Diagnosa:</h3>';
+        
+        if (hasilDiagnosa.length > 0 && parseFloat(hasilDiagnosa[0].persentase) > 0) {
+            const topDiagnosis = hasilDiagnosa[0];
+            
+            outputHTML += `
+                <div class="p-4 bg-yellow-100 border border-yellow-400 rounded-lg mb-4">
+                    <p class="text-xl font-bold text-yellow-800">
+                        Penyebab Paling Mungkin: ${topDiagnosis.nama} (${topDiagnosis.kode})
+                    </p>
+                    <p class="text-lg font-extrabold text-green-700 mt-1">
+                        Tingkat Keyakinan: ${topDiagnosis.persentase}% 
+                    </p>
+                </div>
+                
+                <h4 class="font-bold text-gray-800 mt-4">Detail & Solusi:</h4>
+                <p class="text-sm text-gray-700"><strong>Detail Kerusakan:</strong> ${topDiagnosis.detail}</p>
+                <p class="text-sm text-gray-700 mt-2"><strong>Saran Penanganan:</strong> ${topDiagnosis.solusi}</p>
+                
+                <hr class="my-4 border-gray-200">
+                <p class="font-semibold text-sm text-gray-600">Kemungkinan Diagnosis Lain (> 0%):</p>
+                <ul class="list-disc ml-5 text-sm space-y-1">
+            `;
+            
+            // Tampilkan diagnosis lain (yang memiliki CF > 0)
+            hasilDiagnosa.slice(1).filter(diag => parseFloat(diag.persentase) > 0).forEach(diag => {
+                outputHTML += `<li class="text-gray-700">${diag.nama} (${diag.kode}): ${diag.persentase}%</li>`;
+            });
+            outputHTML += '</ul>';
+        } else {
+            outputHTML += '<p class="text-gray-600">Tidak ada diagnosis yang dapat disimpulkan secara signifikan dari gejala yang dipilih.</p>';
+        }
+        
+        hasilContainer.innerHTML = outputHTML;
+    }
+
+    window.onload = muatGejala;
+</script>
+</body>
+</html>
